@@ -144,6 +144,17 @@ Pastikan environment sudah terinstall:
 - Web server (Apache / Laravel serve)
 
 ---
+<h3>Diagram</h3>
+
+<h5>Class Diagram</h5>
+<p align="center">
+    <img width="30%" alt="image" src="https://github.com/sodrunberkicau/perpustakaan_laravel_php/blob/main/public/diagram/ClassDiagram.png?raw=true" />
+</p>
+
+<h5>ERD</h5>
+<p align="center">
+    <img width="30%" alt="image" src="https://github.com/sodrunberkicau/perpustakaan_laravel_php/blob/main/public/diagram/ERDDiagram.jpeg?raw=true" />
+</p>
 
 ## 🚀 How To Build & Run Project
 
