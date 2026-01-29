@@ -24,6 +24,7 @@ class AuthController extends Controller
             'password.required'         => 'Password perlu diisi.',
         ]);
 
+        
         if (Auth::attempt($credentials))
         {
             $request->session()->regenerate();

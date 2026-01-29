@@ -1,33 +1,18 @@
-version: '3.8'
+version: '3.1'
 
 services:
-  mysql:
-    image: mysql:8.0
-    container_name: mysql-local
+
+  db:
+    image: mariadb
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: perpustakaan
-      MYSQL_USER: appuser
-      MYSQL_PASSWORD: apppass
+      MARIADB_ROOT_PASSWORD: example
+      MARIADB_DATABASE: perpustakaan   # optional, buat langsung bikin database todo
     ports:
-      - "3307:3306"
-    volumes:
-      - mysql_data:/var/lib/mysql
+      - "3307:3306"            # expose MariaDB ke host
 
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin
-    container_name: phpmyadmin-local
+  adminer:
+    image: adminer
     restart: always
     ports:
-      - "8080:80"
-    environment:
-      PMA_HOST: mysql
-      PMA_PORT: 3306
-      PMA_USER: appuser
-      PMA_PASSWORD: apppass
-    depends_on:
-      - mysql
-
-volumes:
-  mysql_data:
+      - "8080:8080"

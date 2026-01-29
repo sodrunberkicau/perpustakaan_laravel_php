@@ -10,7 +10,7 @@
         <div class="col-12 col-lg-6 order-2 order-lg-1">
             <div class="pe-lg-4">
                 <h1 class="amaranth-regular display-4 display-lg-3 mb-3" style="color: #ffd9be; line-height: 1.2;">
-                    Sumber Pengetahuan
+                    Sumber Pengetahuan<br> 
                     <span class="d-block" style="color: #ef9c82;">Tanpa Batas</span>
                 </h1>
                 

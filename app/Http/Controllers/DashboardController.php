@@ -29,7 +29,7 @@ class DashboardController extends BaseController
     {
         $data = DB::table('peminjaman')
             ->whereIn('status', [
-                config('constants.peminjaman.status.1'),
+                config('constants.peminjaman.status.2'),
                 config('constants.peminjaman.status.2'),
                 config('constants.peminjaman.status.5'),
                 config('constants.peminjaman.status.6'),
@@ -129,7 +129,13 @@ class DashboardController extends BaseController
     function showDetail(string $id)
     {
         $decodedId = base64_decode(strval($id));
+
+        // select * from book where id = $decodedId (1);
         $book = Book::where('id', $decodedId)->first();
+        // $get = Book::find($decodedId);
+        // dd($get->stock);
+        // dd($book);
+        // return;
         $categories = $book->categories()->get();
 
         $book->cover = env('COVER_PATH') . $book->cover;
@@ -143,7 +149,8 @@ class DashboardController extends BaseController
     {
         $decodedId = base64_decode(strval($bookId));
         $book = Book::find($decodedId);
-
+        // dd($book);
+        // return;
         if (0 >= $book->stock) {
             return redirect(route('book.detail', ['id' => $bookId]));
         }
